@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💖 Dla Kariny 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ffc0cb, #ff9ecf, #ffe6f2);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 50px;
+      color: #fff;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .wish {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 600px;
+      backdrop-filter: blur(6px);
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.6;
+    }
+
+    .gallery {
+      margin: 40px auto;
+      max-width: 800px;
+    }
+
+    .gallery-placeholder {
+      border: 3px dashed rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      padding: 40px;
+      font-size: 1.1em;
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+
+    iframe, video {
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      margin-top: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 1em;
+      opacity: 0.8;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 182, 193, 0.8);
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+      border-radius: 4px;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 182, 193, 0.8);
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <h1>🎀 Wszystkiego najlepszego, Karina! 🎀</h1>
+
+  <div class="wish">
+    <p>Kochana Karino,</p>
+    <p>z okazji Twoich urodzin życzę Ci mnóstwo radości, uśmiechu, ciepła i miłości 💕  
+    Niech każdy dzień będzie dla Ciebie piękniejszy od poprzedniego,  
+    a wszystkie marzenia spełniają się szybciej, niż zdążysz je wypowiedzieć 🌸</p>
+    <p>— z całego serca 💖</p>
+  </div>
+
+  <div class="gallery">
+    <div class="gallery-placeholder">
+      <img src="1.png" alt="1">
+      <img src="2.png" alt="">
+      <img src="3.png" alt="">
+      <img src="4.png" alt="">
+      <img src="5.png" alt="">
+      <img src="6.png" alt="">
+      <img src="7.png" alt="1">
+      <img src="9.png" alt="">
+      <img src="10.png" alt="">
+      <img src="11.png" alt="">
+      <img src="12.png" alt="">
+      <img src="15.png" alt="">
+      <img src="16.png" alt="">
+    </div>
+  </div>
+
+  <div class="video-section">
+    <p><video controls src="vid.mp4"></video></p>
+  </div>
+
+  <div class="footer">
+    <p>Stworzone z miłością 💞 specjalnie dla Ciebie, słoneczko 💐</p>
+  </div>
+
+  <script>
+    // animowane serduszka
+    const heartsContainer = document.getElementById('hearts');
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 4 + Math.random() * 4 + 's';
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
